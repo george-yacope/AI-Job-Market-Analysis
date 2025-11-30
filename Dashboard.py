@@ -4,7 +4,6 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-import kagglehub
 import os
 import json
 import warnings
@@ -134,9 +133,7 @@ def plot_time_trend(df, x_col, y_col, title, agg_func='count'):
 @st.cache_data
 def load_data():
     with st.spinner('Loading data...'):
-        # Download
-        path = kagglehub.dataset_download("abhishekjaiswal4896/ai-job-market-trends")
-        df = pd.read_csv(os.path.join(path, "ai_job_market.csv"))
+        df = pd.read_csv("data/raw_ai_job_market.csv")
         
         # Basic Cleaning
         df = df.drop_duplicates()
@@ -352,4 +349,5 @@ with tab5:
 
 # Footer
 st.markdown("---")
+
 st.caption("Dashboard generated from AI Job Market Analysis")
