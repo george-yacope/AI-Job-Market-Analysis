@@ -222,7 +222,7 @@ kpi1, kpi2, kpi3, kpi4 = st.columns(4)
 kpi1.metric("Total Jobs", len(df))
 kpi2.metric("Avg Salary", f"${df['avg_salary'].mean():,.0f}")
 kpi3.metric("Top Industry", df['industry'].mode()[0] if not df.empty else "N/A")
-kpi4.metric("Avg Skills per Job", f"{df['skills_count'].mean():.1f}")
+kpi4.metric("Avg Skills per Job", f"{int(df['skills_count'].mean():.0f)}")
 
 st.markdown("---")
 
@@ -351,3 +351,4 @@ with tab5:
 st.markdown("---")
 
 st.caption("Dashboard generated from AI Job Market Analysis")
+
