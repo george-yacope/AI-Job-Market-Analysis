@@ -350,6 +350,8 @@ with tab5:
 # Footer
 st.markdown("---")
 
-st.caption("Dashboard generated from AI Job Market Analysis")
+st.caption("AI Job Market Analysis Dashboard")
+st.caption("Author: George Yacoub Fayez")
+
 
 
